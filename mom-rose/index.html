@@ -175,6 +175,41 @@ button.highlight { background: rgba(255, 255, 255, 0.12); border: 1px solid rgba
 input { accent-color: #ff2d55; width: 100%; cursor: pointer; }
 output { text-align: right; font-size: 11px; color: #aeb7ac; }
 #error { display: none; position: absolute; inset: 35% 10%; font-size: 16px; text-align: center; line-height: 2; color: #ff5252; }
+
+@media (max-width: 760px) {
+  #code-panel {
+    width: 100%; max-width: 100%; height: 42%;
+    transform: translateY(0); border-right: 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  }
+  #code-panel.collapsed {
+    transform: translateY(-100%);
+  }
+  .code-viewport { font-size: 10.5px; line-height: 19px; }
+  #hint {
+    top: 12px; left: 12px; right: 12px;
+    font-size: 9px; letter-spacing: .08em;
+  }
+  #code-panel.collapsed ~ #hint { left: 12px; }
+  #hint small { font-size: 9px; }
+  #ui {
+    bottom: max(10px, env(safe-area-inset-bottom));
+    left: 8px; right: 8px; transform: none;
+    width: auto; max-width: none;
+    gap: 2px; padding: 6px 8px;
+    overflow-x: auto; justify-content: flex-start;
+    scrollbar-width: none; -webkit-overflow-scrolling: touch;
+  }
+  #ui::-webkit-scrollbar { display: none; }
+  #ui button {
+    flex: 0 0 auto; padding: 8px 10px; font-size: 11px;
+  }
+  #theme-menu, #style-menu, #settings {
+    left: 10px; right: 10px; width: auto; max-width: none;
+    max-height: 56vh; padding: 14px;
+  }
+  .theme-grid { grid-template-columns: 1fr; }
+}
 </style>
 </head>
 <body>
